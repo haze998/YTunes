@@ -13,6 +13,7 @@
 		0643A5A029EDF92600CD36D4 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0643A59F29EDF92600CD36D4 /* MainRouter.swift */; };
 		064E83A029ED90E700A09553 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E839F29ED90E700A09553 /* LogoView.swift */; };
 		064E83A229ED9E6200A09553 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E83A129ED9E6200A09553 /* CustomButton.swift */; };
+		068189D729EF099D00C6EA84 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068189D629EF099D00C6EA84 /* AlertManager.swift */; };
 		06B89FD029E08F4E00EF8F7F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B89FCF29E08F4E00EF8F7F /* CustomTextField.swift */; };
 		06EBF80329E051EA00426574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBF80229E051EA00426574 /* AppDelegate.swift */; };
 		06EBF80529E051EA00426574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBF80429E051EA00426574 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		0643A59F29EDF92600CD36D4 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		064E839F29ED90E700A09553 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		064E83A129ED9E6200A09553 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		068189D629EF099D00C6EA84 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		06B89FCF29E08F4E00EF8F7F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		06EBF7FF29E051EA00426574 /* YTunesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTunesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EBF80229E051EA00426574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 				0643A59A29EDF76D00CD36D4 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		068189D529EF099100C6EA84 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				068189D629EF099D00C6EA84 /* AlertManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		06B89FCA29E08E5300EF8F7F /* Models */ = {
@@ -143,6 +153,7 @@
 		06EBF80129E051EA00426574 /* YTunesApp */ = {
 			isa = PBXGroup;
 			children = (
+				068189D529EF099100C6EA84 /* Managers */,
 				0643A59C29EDF81700CD36D4 /* Router */,
 				06B89FCA29E08E5300EF8F7F /* Models */,
 				06B89FCB29E08E5B00EF8F7F /* Views */,
@@ -266,6 +277,7 @@
 				0643A59B29EDF76D00CD36D4 /* ForgotPasswordViewController.swift in Sources */,
 				06EBF82529E0677A00426574 /* Extension + UIView.swift in Sources */,
 				0643A59E29EDF82500CD36D4 /* Router.swift in Sources */,
+				068189D729EF099D00C6EA84 /* AlertManager.swift in Sources */,
 				0643A5A029EDF92600CD36D4 /* MainRouter.swift in Sources */,
 				06B89FD029E08F4E00EF8F7F /* CustomTextField.swift in Sources */,
 				06EBF80329E051EA00426574 /* AppDelegate.swift in Sources */,

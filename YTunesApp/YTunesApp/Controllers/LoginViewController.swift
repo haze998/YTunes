@@ -30,6 +30,11 @@ class LoginViewController: UIViewController {
         forgotPassButton.addTarget(self, action: #selector(didTapForgotPassButton), for: .touchUpInside)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupConstraints()

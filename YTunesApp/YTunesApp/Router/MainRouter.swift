@@ -16,7 +16,7 @@ protocol MainRouter {
 
 extension Router: MainRouter {
     func showLogin(from viewController: UIViewController) {
-        // TODO
+        viewController.navigationController?.popToRootViewController(animated: true)
     }
     
     func showRegistry(from viewController: UIViewController) {

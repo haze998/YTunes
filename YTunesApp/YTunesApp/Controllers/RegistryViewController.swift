@@ -10,18 +10,23 @@ import SnapKit
 
 class RegistryViewController: UIViewController {
 
-    private let logoView = LogoView(title: "Firebase", subTitle: "Register your account")
+    private let router: MainRouter = Router.shared
+    private let logoView = LogoView(title: "Firebase", subTitle: "Create new account")
     private let userNameTextField = CustomTextField(fieldType: .username)
     private let emailTextField = CustomTextField(fieldType: .email)
     private let passwordTextField = CustomTextField(fieldType: .password)
     private let registerButton = CustomButton(title: "Register", withBackgroundColor: true, fontSize: .big)
+    private let switchAccountButton = CustomButton(title: "Do you have an account? Sign in", fontSize: .medium)
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         
-        self.view.addSubviews(view: [logoView, userNameTextField, emailTextField, passwordTextField, registerButton])
+        self.view.addSubviews(view: [logoView, userNameTextField, emailTextField, passwordTextField, registerButton, switchAccountButton])
+        
+        registerButton.addTarget(self, action: #selector(registerButtonDidTap), for: .touchUpInside)
+        switchAccountButton.addTarget(self, action: #selector(switchAccountButtonDidTap), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
@@ -32,6 +37,14 @@ class RegistryViewController: UIViewController {
     
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
+    }
+    
+    @objc private func registerButtonDidTap() {
+        // do smth...
+    }
+    
+    @objc private func switchAccountButtonDidTap() {
+        router.showLogin(from: self)
     }
     
     private func setupConstraints() {
@@ -65,7 +78,12 @@ class RegistryViewController: UIViewController {
         registerButton.snp.makeConstraints { make in
             make.width.equalTo(270)
             make.centerX.equalToSuperview()
-            make.top.equalTo(passwordTextField).inset(95)
+            make.top.equalTo(passwordTextField).inset(85)
+        }
+        
+        switchAccountButton.snp.makeConstraints { make in
+            make.top.equalTo(registerButton).inset(50)
+            make.centerX.equalToSuperview()
         }
     }
 
