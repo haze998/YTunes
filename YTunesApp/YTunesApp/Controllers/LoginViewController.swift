@@ -10,6 +10,7 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     
+    private let router: MainRouter = Router.shared
     private let logoView = LogoView(title: "Firebase", subTitle: "Sign in to your account")
     private let emailTextField = CustomTextField(fieldType: .email)
     private let passwordTextField = CustomTextField(fieldType: .password)
@@ -17,7 +18,7 @@ class LoginViewController: UIViewController {
     private let createAccButton = CustomButton(title: "Let's create a new account?", fontSize: .medium)
     private let forgotPassButton = CustomButton(title: "Forgot Password?", fontSize: .small)
 
-    // - MARK: Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -43,11 +44,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func didTapCreateAccButton() {
-        print("CreateAccButton btn tapped")
+        router.showRegistry(from: self)
     }
     
     @objc private func didTapForgotPassButton() {
-        print("ForgotPassButton btn tapped")
+        router.showForgotPass(from: self)
     }
     
     private func setupConstraints() {

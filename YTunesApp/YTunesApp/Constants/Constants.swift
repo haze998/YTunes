@@ -12,8 +12,3 @@ enum FontNames: String {
     case openSansSemiBold = "OpenSans-SemiBold"
     case openSansRegular = "OpenSans-Regular"
 }
-
-enum Destination {
-    case createAccount(id: String)
-    case forgotPassword
-}

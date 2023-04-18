@@ -46,11 +46,6 @@ class CustomTextField: UITextField {
         }
     }
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        self.addSubview(authFieldType)
-//    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
