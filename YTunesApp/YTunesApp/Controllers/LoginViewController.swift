@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     private let signInButton = CustomButton(title: "Sign in", withBackgroundColor: true, fontSize: .big)
     private let createAccButton = CustomButton(title: "Let's create a new account?", fontSize: .medium)
     private let forgotPassButton = CustomButton(title: "Forgot Password?", fontSize: .small)
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +39,38 @@ class LoginViewController: UIViewController {
         super.viewWillLayoutSubviews()
         setupConstraints()
     }
-
+    
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
     }
     
     @objc private func didTapSignInButton() {
-        print("SignIn btn tapped")
+        let loginUser = LoginUserInfo(
+            email: self.emailTextField.text ?? "",
+            password: self.passwordTextField.text ?? ""
+        )
+        
+//        // Email check
+//        if !Validator.isValidEmail(email: loginUser.email){
+//            AlertManager.showSignInErrorAlert(on: self)
+//            return
+//        }
+//        
+//        // Password check
+//        if !Validator.isPasswordValid(for: loginUser.password) {
+//            AlertManager.showSignInErrorAlert(on: self)
+//            return
+//        }
+        
+        AuthManager.shared.signInUser(with: loginUser) { error in
+            if let error = error {
+                AlertManager.showSignInErrorAlert(on: self, with: error)
+                return
+            }
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.checkAuthenfication()
+            }
+        }
     }
     
     @objc private func didTapCreateAccButton() {
@@ -93,6 +118,6 @@ class LoginViewController: UIViewController {
             make.trailing.equalTo(passwordTextField).inset(5)
         }
     }
-
+    
 }
 

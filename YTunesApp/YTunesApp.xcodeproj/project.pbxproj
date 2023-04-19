@@ -54,6 +54,11 @@
 		06EBF81F29E0654300426574 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06EBF81E29E0654300426574 /* OpenSans-Regular.ttf */; };
 		06EBF82229E0669C00426574 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBF82129E0669C00426574 /* Constants.swift */; };
 		06EBF82529E0677A00426574 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EBF82429E0677A00426574 /* Extension + UIView.swift */; };
+		06F9292629EFF8E000AE9543 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9292529EFF8E000AE9543 /* AuthManager.swift */; };
+		06F9292929EFF97F00AE9543 /* RegisterUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9292829EFF97F00AE9543 /* RegisterUserInfo.swift */; };
+		06F9292B29F002E300AE9543 /* LoginUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9292A29F002E300AE9543 /* LoginUserInfo.swift */; };
+		06F9292D29F00E9100AE9543 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9292C29F00E9100AE9543 /* HomeViewController.swift */; };
+		06F9292F29F01D8700AE9543 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9292E29F01D8700AE9543 /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +83,11 @@
 		06EBF81E29E0654300426574 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		06EBF82129E0669C00426574 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		06EBF82429E0677A00426574 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
+		06F9292529EFF8E000AE9543 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		06F9292829EFF97F00AE9543 /* RegisterUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInfo.swift; sourceTree = "<group>"; };
+		06F9292A29F002E300AE9543 /* LoginUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfo.swift; sourceTree = "<group>"; };
+		06F9292C29F00E9100AE9543 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		06F9292E29F01D8700AE9543 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,7 @@
 				06EBF80629E051EA00426574 /* LoginViewController.swift */,
 				0643A59829EDF74000CD36D4 /* RegistryViewController.swift */,
 				0643A59A29EDF76D00CD36D4 /* ForgotPasswordViewController.swift */,
+				06F9292C29F00E9100AE9543 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				068189D629EF099D00C6EA84 /* AlertManager.swift */,
+				06F9292529EFF8E000AE9543 /* AuthManager.swift */,
+				06F9292E29F01D8700AE9543 /* Validator.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -149,6 +162,8 @@
 		06B89FCA29E08E5300EF8F7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				06F9292829EFF97F00AE9543 /* RegisterUserInfo.swift */,
+				06F9292A29F002E300AE9543 /* LoginUserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,13 +374,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				06EBF80729E051EA00426574 /* LoginViewController.swift in Sources */,
+				06F9292629EFF8E000AE9543 /* AuthManager.swift in Sources */,
+				06F9292B29F002E300AE9543 /* LoginUserInfo.swift in Sources */,
+				06F9292D29F00E9100AE9543 /* HomeViewController.swift in Sources */,
 				0643A59929EDF74000CD36D4 /* RegistryViewController.swift in Sources */,
 				0643A59B29EDF76D00CD36D4 /* ForgotPasswordViewController.swift in Sources */,
 				06EBF82529E0677A00426574 /* Extension + UIView.swift in Sources */,
 				0643A59E29EDF82500CD36D4 /* Router.swift in Sources */,
 				068189D729EF099D00C6EA84 /* AlertManager.swift in Sources */,
 				0643A5A029EDF92600CD36D4 /* MainRouter.swift in Sources */,
+				06F9292F29F01D8700AE9543 /* Validator.swift in Sources */,
 				06B89FD029E08F4E00EF8F7F /* CustomTextField.swift in Sources */,
+				06F9292929EFF97F00AE9543 /* RegisterUserInfo.swift in Sources */,
 				06EBF80329E051EA00426574 /* AppDelegate.swift in Sources */,
 				064E83A229ED9E6200A09553 /* CustomButton.swift in Sources */,
 				064E83A029ED90E700A09553 /* LogoView.swift in Sources */,

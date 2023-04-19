@@ -40,7 +40,43 @@ class RegistryViewController: UIViewController {
     }
     
     @objc private func registerButtonDidTap() {
-        // do smth...
+        let registerUser = RegisterUserInfo(
+            userName: userNameTextField.text ?? "",
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
+        
+        // check username
+        if !Validator.isValidUserName(userName: registerUser.userName) {
+            AlertManager.preventInvaliUserName(on: self)
+            return
+        }
+        
+        // check email
+        if !Validator.isValidEmail(email: registerUser.email) {
+            AlertManager.preventInvalidEmail(on: self)
+            return
+        }
+        
+        // check password
+//        if !Validator.isPasswordValid(password: registerUser.password) {
+//            AlertManager.preventInvalidPassword(on: self)
+//            return
+//        }
+        
+        AuthManager.shared.registerUser(with: registerUser) { [weak self] wasRegistered, error in
+            guard let self = self else { return}
+            if let error = error {
+                AlertManager.showRegistrationErrorAlert(on: self, with: error)
+                return
+            }
+            
+            if wasRegistered {
+                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                    sceneDelegate.checkAuthenfication()
+                }
+            }
+        }
     }
     
     @objc private func switchAccountButtonDidTap() {
