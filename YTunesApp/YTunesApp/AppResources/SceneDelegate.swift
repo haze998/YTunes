@@ -40,17 +40,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    private func goToController(with viewController: UIViewController) {
-        DispatchQueue.main.async { [weak self] in
-            UIView.animate(withDuration: 0.25) {
-                self?.window?.layer.opacity = 0
-            } completion: { [weak self] _ in
-                let nav = UINavigationController(rootViewController: viewController)
-                nav.modalPresentationStyle = .fullScreen
-                self?.window?.rootViewController = nav
-            }
-
-        }
-    }
+//    private func goToController(with viewController: UIViewController) {
+//        DispatchQueue.main.async { [weak self] in
+//            UIView.animate(withDuration: 0.25) {
+//                self?.window?.layer.opacity = 0
+//            } completion: { [weak self] _ in
+//                let nav = UINavigationController(rootViewController: viewController)
+//                nav.modalPresentationStyle = .fullScreen
+//                self?.window?.rootViewController = nav
+//            }
+//
+//        }
+//    }
 }
 

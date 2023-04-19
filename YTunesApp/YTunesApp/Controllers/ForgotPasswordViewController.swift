@@ -20,6 +20,8 @@ class ForgotPasswordViewController: UIViewController {
         setupUI()
         
         self.view.addSubviews(view: [logoView, emailTextField, resetPasswordButton])
+        
+        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonDidTap), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
@@ -31,6 +33,25 @@ class ForgotPasswordViewController: UIViewController {
     // MARK: - SetupUI
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
+    }
+    
+    @objc private func resetPasswordButtonDidTap() {
+        let email = emailTextField.text ?? ""
+        
+        if !Validator.isValidEmail(email: email) {
+            AlertManager.preventInvalidEmail(on: self)
+            return
+        }
+        
+        AuthManager.shared.forgotPassword(with: email) { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showResetPasswordAlert(on: self, with: error)
+                return
+            }
+            
+            AlertManager.showPasswordResetAlert(on: self)
+        }
     }
     
     private func setupConstraints() {

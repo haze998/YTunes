@@ -13,6 +13,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        
+        AuthManager.shared.fetchUser { [weak self] user, error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showFetchingUserAlert(on: self, with: error)
+            }
+        }
     }
 
     private func setupUI() {
